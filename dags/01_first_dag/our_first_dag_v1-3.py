@@ -21,8 +21,8 @@ with DAG(
     start_date=datetime(2023, 6, 25, tzinfo=timezone),
     schedule_interval='0 8 * * *', #'@daily'
     catchup=False,
-    params={"name": "Data Path"}
-    # schedule=None,
+    params={"name": "Data Path", "project": "Airflow Test Project"}
+
 ) as dag:
     task1 = BashOperator(
         task_id='first_task',
